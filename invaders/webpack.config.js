@@ -15,9 +15,9 @@ let loaders = [
             presets: ['es2015']
         }
     },
-    { test: /phaser-split\.js$/, loader: 'expose?Phaser' },
-    { test: /pixi\.js/, loader: "script" },
-	{ test: /p2\.js/, loader: "expose?p2" },
+    // { test: /phaser-split\.js$/, loader: 'expose?Phaser' },
+    // { test: /pixi\.js/, loader: "script" },
+	// { test: /p2\.js/, loader: "expose?p2" },
 ];
 
 // define entries and entries output
@@ -42,5 +42,10 @@ module.exports = {
     module: {
         loaders: loaders,
     },
+    externals: {
+        phaser: "Phaser",
+        pixi: "PIXI",
+        p2: "p2",
+    }
 };
 
